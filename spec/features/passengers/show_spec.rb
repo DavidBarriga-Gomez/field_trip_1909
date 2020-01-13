@@ -24,7 +24,6 @@ RSpec.describe 'As A Visitor', type: :feature do
     passenger_flight_3 = PassengerFlight.create!(flight_id: @flight_1.id, passenger_id: @foxy.id)
     passenger_flight_4 = PassengerFlight.create!(flight_id: @flight_1.id, passenger_id: @goblin.id)
     passenger_flight_5 = PassengerFlight.create!(flight_id: @flight_1.id, passenger_id: @bear.id)
-    binding.pry
   end
 
   it 'When I visit a passenger show page /passengers/:id I see the passengers name, all flight numbers for that passenger and those numbers are links' do
@@ -35,7 +34,7 @@ RSpec.describe 'As A Visitor', type: :feature do
     expect(page).to have_link(@flight_2.number)
     expect(page).to have_link(@flight_3.number)
     click_on(@flight_1.number)
-    expect(current_path).ot eq("/flights/#{@flight_1.id}")
+    expect(current_path).to eq("/flights/#{@flight_1.id}")
 
   end
 end

@@ -13,7 +13,8 @@ PassengerFlight.destroy_all
 @airline_1 = Airline.create!(name: 'airline_1')
 
 @flight_1 = @airline_1.flights.create!(number: '1', date: 'today', time: 'right now', departure_city: 'denver', arrival_city: 'los angeles')
-# binding.pry
+@flight_2 = @airline_1.flights.create!(number: '2', date: 'today', time: 'right now', departure_city: 'denver', arrival_city: 'los angeles')
+@flight_3 = @airline_1.flights.create!(number: '3', date: 'today', time: 'right now', departure_city: 'denver', arrival_city: 'los angeles')
 
 @david = Passenger.create!(name: 'David', age: 26)
 @scott = Passenger.create!(name: 'Scott', age: 27)
@@ -23,6 +24,9 @@ PassengerFlight.destroy_all
 @bear = Passenger.create!(name: 'Bear', age: 8)
 
 passenger_flight_1 = PassengerFlight.create!(flight_id: @flight_1.id, passenger_id: @david.id)
+passenger_flight_1 = PassengerFlight.create!(flight_id: @flight_2.id, passenger_id: @david.id)
+passenger_flight_1 = PassengerFlight.create!(flight_id: @flight_3.id, passenger_id: @david.id)
+
 passenger_flight_2 = PassengerFlight.create!(flight_id: @flight_1.id, passenger_id: @scott.id)
 passenger_flight_3 = PassengerFlight.create!(flight_id: @flight_1.id, passenger_id: @foxy.id)
 passenger_flight_4 = PassengerFlight.create!(flight_id: @flight_1.id, passenger_id: @goblin.id)
