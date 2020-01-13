@@ -6,6 +6,7 @@ class Flight <ApplicationRecord
   has_many :passengers, through: :passenger_flights
 
   def self.find_flight(flight_number)
+    # Flight.where(number[:flight_number])
     binding.pry
   end
 end

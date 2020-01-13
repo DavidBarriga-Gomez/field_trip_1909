@@ -15,6 +15,8 @@ PassengerFlight.destroy_all
 @flight_1 = @airline_1.flights.create!(number: '1', date: 'today', time: 'right now', departure_city: 'denver', arrival_city: 'los angeles')
 @flight_2 = @airline_1.flights.create!(number: '2', date: 'today', time: 'right now', departure_city: 'denver', arrival_city: 'los angeles')
 @flight_3 = @airline_1.flights.create!(number: '3', date: 'today', time: 'right now', departure_city: 'denver', arrival_city: 'los angeles')
+@flight_57 = @airline_1.flights.create!(number: '57', date: 'today', time: 'right now', departure_city: 'denver', arrival_city: 'los angeles')
+
 
 @david = Passenger.create!(name: 'David', age: 26)
 @scott = Passenger.create!(name: 'Scott', age: 27)
