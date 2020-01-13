@@ -7,6 +7,7 @@ RSpec.describe 'As A Visitor', type: :feature do
     @flight_1 = @airline_1.flights.create!(number: '1', date: 'today', time: 'right now', departure_city: 'denver', arrival_city: 'los angeles')
     @flight_2 = @airline_1.flights.create!(number: '2', date: 'today', time: 'right now', departure_city: 'denver', arrival_city: 'los angeles')
     @flight_3 = @airline_1.flights.create!(number: '3', date: 'today', time: 'right now', departure_city: 'denver', arrival_city: 'los angeles')
+    @flight_57 = @airline_1.flights.create!(number: '57', date: 'today', time: 'right now', departure_city: 'denver', arrival_city: 'los angeles')
     # binding.pry
 
     @david = Passenger.create!(name: 'David', age: 26)
@@ -37,13 +38,14 @@ RSpec.describe 'As A Visitor', type: :feature do
     expect(current_path).to eq("/flights/#{@flight_1.id}")
   end
 
-  it '' do
+  it 'Cann add a flight on a passengers show page' do
     visit("/passengers/#{@david.id}")
     fill_in :flight_number, with: '57'
     click_on('Submit')
     expect(current_path).to eq("/passengers/#{@david.id}")
     expect(page).to have_content('57')
   end
+end
 #   User Story 3, Assign a Passenger to a Flight
 # As a visitor
 # When I visit a passengers show page
@@ -52,4 +54,3 @@ RSpec.describe 'As A Visitor', type: :feature do
 # And click submit
 # I'm taken back to the passengers show page
 # And I can see the flight number of the flight I just added
-end

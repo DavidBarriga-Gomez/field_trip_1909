@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   get 'flights/:id', to: 'flights#show'
 
   get '/passengers/:id', to: 'passengers#show'
+  patch 'passengers/:id/edit', to: 'passengers#update'
+  # resources :passengers, only: [:show]
 end
