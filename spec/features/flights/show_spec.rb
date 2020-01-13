@@ -5,6 +5,7 @@ RSpec.describe 'As A Visitor', type: :feature do
     @airline_1 = Airline.create!(name: 'airline_1')
 
     @flight_1 = @airline_1.flights.create!(number: '1', date: 'today', time: 'right now', departure_city: 'denver', arrival_city: 'los angeles')
+    # binding.pry
 
     @david = Passenger.create!(name: 'David', age: 26)
     @scott = Passenger.create!(name: 'Scott', age: 27)
@@ -17,7 +18,7 @@ RSpec.describe 'As A Visitor', type: :feature do
     passenger_flight_2 = PassengerFlight.create!(flight_id: @flight_1.id, passenger_id: @scott.id)
     passenger_flight_3 = PassengerFlight.create!(flight_id: @flight_1.id, passenger_id: @foxy.id)
     passenger_flight_4 = PassengerFlight.create!(flight_id: @flight_1.id, passenger_id: @goblin.id)
-    passenger_flight_5 = PassengerFlight.create!(flight_id: @flight_1.id, passenger_id: @beare.id)
+    passenger_flight_5 = PassengerFlight.create!(flight_id: @flight_1.id, passenger_id: @bear.id)
   end
 
   it 'Visit a show page /flights/:id I see all flight information, airline name and passenger names' do
