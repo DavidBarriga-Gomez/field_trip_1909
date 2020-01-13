@@ -4,4 +4,8 @@ class Flight <ApplicationRecord
 
   has_many :passenger_flights
   has_many :passengers, through: :passenger_flights
+
+  def self.find_flight(flight_number)
+    binding.pry
+  end
 end
