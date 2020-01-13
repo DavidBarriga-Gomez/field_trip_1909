@@ -35,6 +35,21 @@ RSpec.describe 'As A Visitor', type: :feature do
     expect(page).to have_link(@flight_3.number)
     click_on(@flight_1.number)
     expect(current_path).to eq("/flights/#{@flight_1.id}")
-
   end
+
+  it '' do
+    visit("/passengers/#{@david.id}")
+    fill_in :flight_number, with: '57'
+    click_on('Submit')
+    expect(current_path).to eq("/passengers/#{@david.id}")
+    expect(page).to have_content('57')
+  end
+#   User Story 3, Assign a Passenger to a Flight
+# As a visitor
+# When I visit a passengers show page
+# I see a form to add a flight
+# When I fill in the form with a flight number (assuming these will always be unique)
+# And click submit
+# I'm taken back to the passengers show page
+# And I can see the flight number of the flight I just added
 end
